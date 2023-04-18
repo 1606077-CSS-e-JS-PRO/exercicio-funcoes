@@ -1,11 +1,11 @@
 // TESTE UNITÁRIO (TESTANDO FUNÇÕES)
 // TDD - Teste driven development
 
-const { encontrarAluno } = require("./alunos")
+const { encontrarAluno, filtrarAlunos, construirAluno } = require("./alunos")
 
 describe("alunos", () => {
     
-    fdescribe("encontrarAluno", () => {
+    describe("encontrarAluno", () => {
         it("deve retornar 'encontrei' quando encontrar um nome da lista", () => {
             const nome = "Sabino"
             const listaAluno = ["Cicero", "Luciel", "Sabino"]
@@ -27,20 +27,39 @@ describe("alunos", () => {
     })
 
     describe("filtrarAlunos", () => {
-        it("deve retornar uma lista vazia se não encontrar nenhum aluno", () => {
-            // Meu teste        
-        })
         it("deve retornar o nome de um aluno se encontrar um aluno na lista", () => {
-            // Meu teste        
+            const nome = "Sabino"
+            const listaAluno = ["Cicero", "Luciel", "Sabino"]
+
+            const resultado = filtrarAlunos(nome, listaAluno)
+            const resultadoEsperado = ["Sabino"]
+
+            expect(resultado).toEqual(resultadoEsperado)       
         })
         it("deve retornar o nome de dois alunos se encontrar dois aluno na lista", () => {
-            // Meu teste        
+            const nome = "Sabino"
+            const listaAluno = ["Cicero", "Sabino", "Luciel", "Sabino"]
+
+            const resultado = filtrarAlunos(nome, listaAluno)
+            const resultadoEsperado = ["Sabino", "Sabino"]
+
+            expect(resultado).toEqual(resultadoEsperado)      
         })
     })
 
     describe("construirAluno", () => {
         it("deve retornar um objeto de aluno ao receber nome e idade", () => {
-            // Meu teste        
+            const nome = "Sabino"
+            const idade = 31
+
+            const resultado = construirAluno(nome, idade)
+
+            const resultadoEsperado = {
+                nome: "Sabino",
+                idade: 31
+            }
+
+            expect(resultado).toEqual(resultadoEsperado)        
         })
     })
 })

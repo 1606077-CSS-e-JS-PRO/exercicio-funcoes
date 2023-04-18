@@ -14,11 +14,17 @@ function encontrarAluno(nomeAluno, listaAlunos) {
 
 
 function filtrarAlunos(nomeAluno, listaAlunos) {
-
+    return listaAlunos.filter((aluno) => aluno == nomeAluno)
 }
 
 function construirAluno(nome, idade) {
 
+    const objetoAluno = {
+        nome: nome,
+        idade
+    }
+
+    return objetoAluno
 }
 
 module.exports = {
