@@ -28,6 +28,15 @@ describe("alunos", () => {
 
     describe("filtrarAlunos", () => {
         it("deve retornar o nome de um aluno se encontrar um aluno na lista", () => {
+            const nome = "Jorge"
+            const listaAluno = ["Cicero", "Luciel", "Sabino"]
+
+            const resultado = filtrarAlunos(nome, listaAluno)
+            const resultadoEsperado = []
+
+            expect(resultado).toEqual(resultadoEsperado)       
+        })
+        it("deve retornar o nome de um aluno se encontrar um aluno na lista", () => {
             const nome = "Sabino"
             const listaAluno = ["Cicero", "Luciel", "Sabino"]
 
